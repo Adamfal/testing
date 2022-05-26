@@ -1,0 +1,128 @@
+
+#leftbar h2{
+    font-size: 25px;
+    text-align: center;
+    font-weight: bolder;
+    text-transform: uppercase;
+    margin-bottom: 0%;
+    margin-top: 15%;
+    margin-left: 5%;
+    z-index: 3;
+}
+
+#leftbar{
+   
+    width: 20%;
+    margin-top: 0%;
+    margin-left: 35.5px;
+    position: absolute;
+    height: 400px;
+    z-index: 0;
+    
+}
+
+#myBtnContainer{
+    float: left;
+    margin-top: 5%;
+    width: 280px;
+    height: 300px;
+    padding: 10px;
+    margin-left: 3%;
+    left: 0%;
+    z-index: 2;
+    
+
+  }
+
+#mybookscontainer{
+    width: 75%;
+    flex-wrap: wrap;
+  
+    height: 1000px;
+    margin-right: 0%;
+    margin-bottom: 8%;
+    float: right;
+    display: flex;
+    transition: all ease-in-out 0.5s;
+    padding: 20px;
+    
+    
+    
+    
+}
+#mybookscontainer img{
+    width: 200px;
+    margin-top: 4%;
+    transition: all ease-in-out 0.5s;;
+}
+#mybookscontainer img:hover{
+  transform: translateY(-2%);
+  transition: ease-in-out 0.4s;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.mybookscontainer-description{
+  height: 60px;
+  text-align: center;
+  width: 200px;
+  position: relative;
+  
+  
+  
+}
+
+.mybookscontainer-description h1{
+  padding: 10px;
+  margin: 0 auto;
+  font-size: 15px;
+}
+
+.mybookscontainer-description span{
+  font-size: 13px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.filterDiv {
+    width: auto;
+    padding: 25px;
+    float: right;
+    text-align: center;
+    display: none;
+    transition: all ease-in-out 0.5s;
+    overflow: hidden;
+    line-height: 0px;
+    margin: 2px;
+  }
+
+  
+  .show {
+    display: block;
+  }
+  
+
+  
+  /* Style the buttons */
+  .btn {
+    border: none;
+    outline: none;
+    padding: 10px;
+    margin-top: 3%;
+    margin-left: 0%;
+    background-color: #c8c8c8;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: #ddd;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: 0.2s ease-in-out;
+    background: rgb(50, 49, 49);
+    color: white;
+  }
+  
+  .btn.active {
+    background: rgb(50, 49, 49);
+    color: white;
+  }
+  

@@ -1,0 +1,72 @@
+
+.open-positions{
+    margin: 0 auto;
+    font-family: 'arial';
+    font-size: 20px;
+    
+    
+
+  
+  }
+  
+  .open-positions h1{
+    font-family: 'poppins';
+    text-decoration: underline;
+    font-size: 30px;
+    margin-top: 8%;
+    margin-bottom: 0%;
+    font-weight: bolder;
+    text-transform: uppercase;
+    text-align: center;
+  
+  }
+  .open-positions h2{
+    font-size: 23px;
+    margin-top: 5%;
+    margin-bottom: 0%;
+    font-weight: bolder;
+    text-transform: uppercase;
+    text-align: center;
+    
+  }
+  .open-positions h3{
+    font-size: 18px;
+    margin-top: 6%;
+    margin-bottom: 1%;
+    font-weight: bolder;
+    text-transform: uppercase;
+    text-align: center;
+    
+    
+  }
+
+  .open-positions p{
+      margin: 0 auto;
+      margin-top: 1%;
+      width: 1000px;
+      line-height: 170%;
+      word-wrap: break-word;
+      word-break:keep-all;
+      white-space: wrap;
+        
+  }
+
+  .open-positions span{
+    margin-top: 6%;
+    margin-left: 16%;
+    margin-bottom: 1%;
+    font-weight: bolder;
+    text-align: left;
+
+
+        
+  }
+
+  .open-positions ul li{
+    margin-left: 15%;
+    line-height: 190%;
+    top: 0%;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    width: 60%;
+  }

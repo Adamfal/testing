@@ -1,0 +1,18 @@
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+.submission-received{
+  width: 50%;
+  margin-left: 25%;
+  }
+
+.submission-received h1{
+  text-align: center;
+  font-size: 30px;
+  text-transform: uppercase;
+  margin-bottom: 2%;
+  }
+.submission-received p{
+  text-align: left;
+  }

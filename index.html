@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/194918e54c.js" crossorigin="anonymous"></script>
+  <title>Localhost</title>
+  <meta name="Author" content="Noble Fallen">
+  <link rel="stylesheet" href="style.css">
+ 
+</head>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<section class="navigation">
+  <div class="nav-container">
+    <div class="brand">
+      <a href="index.html"><img src="photos/ae_logo.png"></a>
+      <span onclick="window.location.href='index.html';">AESTHETIC PRESS</span>
+    </div>
+    <nav>
+      <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+      <ul class="nav-list">
+        <li>
+          <a href="index.html">Home</a>
+            </li>
+        <li>
+          <a href="books.html">Books</a>
+            </li>
+        <li>
+          <a href="authors.html">Authors</a>
+          <ul class="nav-dropdown">
+            <li>
+              <a href="authors.html">Our Authors</a>
+            </li>
+            <li>
+              <a href="#!">Book Tours</a>
+            </li>
+            <li>
+              <a href="#!">Events</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#!">About</a>
+          <ul class="nav-dropdown">
+            <li>
+              <a href="team.html">Our Team</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#!">Contact</a>
+          <ul class="nav-dropdown">
+            <li>
+              <a href="contact.html">Contact Us</a>
+            </li>
+            <li>
+              <a href="submissions.html">Submissions</a>
+            </li>
+            <li>
+              <a href="#!">Permissions</a>
+            </li>
+            <li>
+              <a href="#!">Press & Publicity</a>
+            </li>
+            <li>
+              <a href="careers.html">Careers</a>
+            </li>
+          </ul>
+        </li> 
+    </nav>
+  </div>
+</section>
+
+
+<body>
+
+  
+
+
+
+  <div id="hcg-slider-1" class="hcg-slider">
+    <div class="hcg-slide-container">
+      <div class="hcg-slider-body">
+        <a class="hcg-slides animated" style="display:block">
+          <span class="hcg-slide-number">1/5</span>
+          <img src="photos/headers/ABY-header2.png" alt="image 1">
+          <span class="hcg-slide-text">image 1</span>
+        </a>
+      </div>
+      <a class="hcg-slide-prev" href="#">❮</a>
+      <a class="hcg-slide-next" href="#">❯</a>
+    </div>
+    <div class="hcg-slide-dot-control"></div>
+    </div>
+    
+    
+    <script>
+  
+      (function(){
+      //If you want to include more images, add the link name and URL of the image in the array list below.
+        let images_list = [
+          {"url":"photos/headers/ABY-header2.png",
+          "link":"", 
+          "name": ""},
+
+          {"url":"photos/headers/NY-header2.png",
+          "link":"", 
+          "name": ""},
+
+
+          {"url":"photos/headers/TW-header2.png",
+          "link":"", 
+          "name": ""},
+
+
+          {"url":"photos/headers/TMN-header2.png",
+          "link":"", 
+          "name": ""},
+         
+            
+
+
+
+
+        ];
+        let slider_id = document.querySelector("#hcg-slider-1");
+        
+// append all images
+let dots_div = "";
+let images_div = "";
+for (let i = 0; i < images_list.length; i++) {
+  // if no link without href="" tag
+  let href = (images_list[i].link == "" ? "":' href="'+images_list[i].link+'"');
+  images_div += '<a'+href+' class="hcg-slides animated"'+(i === 0 ? ' style="display:block"':'')+'>'+
+          '<span class="hcg-slide-number">'+(i+1)+'/'+images_list.length+'</span>'+
+          '<img src="'+images_list[i].url+'" alt="'+images_list[i].name+'">'+
+          '<span class="hcg-slide-text">'+images_list[i].name+'</span>'+
+         '</a>';
+  dots_div += '<span class="hcg-slide-dot'+(i === 0 ? ' dot-active':'')+'" data-id="'+i+'"></span>';
+}
+
+
+
+slider_id.querySelector(".hcg-slider-body").innerHTML = images_div;
+slider_id.querySelector(".hcg-slide-dot-control").innerHTML = dots_div;
+
+let slide_index = 0;
+
+let images = slider_id.querySelectorAll(".hcg-slides");
+let dots = slider_id.querySelectorAll(".hcg-slide-dot");
+let prev_button = slider_id.querySelector(".hcg-slide-prev");
+let next_button = slider_id.querySelector(".hcg-slide-next");
+
+function showSlides() {
+  if (slide_index > images.length-1) {
+    slide_index = 0;
+  }
+  if (slide_index < 0) {
+    slide_index = images.length-1;
+  }
+  for (let i = 0; i < images.length; i++) {
+    images[i].style.display = "none";
+    dots[i].classList.remove("dot-active");
+    if (i == slide_index) {
+      images[i].style.display = "block";
+      dots[i].classList.add("dot-active");
+    }
+  }
+}
+
+prev_button.addEventListener("click", function(event) {
+  event.preventDefault();
+  slide_index--;
+  showSlides();
+}, false);
+
+next_button.addEventListener("click", function(event){
+  event.preventDefault();
+  slide_index++;
+  showSlides();
+}, false);
+
+function dot_click(event) {
+  slide_index = event.target.dataset.id;
+  showSlides();
+}
+
+for (let i = 0; i < dots.length; i++) {
+  dots[i].addEventListener("click", dot_click, false);
+}
+})();
+</script>
+ 
+
+<div class="tabs-header">
+  <h1>Our Titles</h1>
+</div>
+
+<div class="tabs">
+  <input type="radio" name="tabs" id="tabone" checked="checked">
+  <label for="tabone">NEW RELEASES</label>
+  <div class="tab">
+    <a href="b-aby.html"><img src="photos/bookcover/Alluredbyyou.jpg"></a>
+    <a href="b-ny.html"><img src="photos/bookcover/Notyourmarrysue.jpg"></a>
+    <a href="b-tw.html"><img src="photos/bookcover/thewolf.png"></a>
+    <a href="b-tmn.html"><img src="photos/bookcover/tmn.png"></a>
+    <a href="#!"><img src="photos/bookcover/Ironfists.png"></a>
+  </div>
+
+  
+  <input type="radio" name="tabs" id="tabtwo">
+  <label for="tabtwo">BESTSELLERS</label>
+  <div class="tab">
+    <a href="b-tmn.html"><img src="photos/bookcover/tmn.png"></a>
+    <a href="#!"><img src="photos/bookcover/Ironfists.png"></a>
+    <a href="#!"><img src="photos/bookcover/chronicles.png"></a>
+  </div>
+  
+  <input type="radio" name="tabs" id="tabthree">
+  <label for="tabthree">COMING SOON</label>
+  <div class="tab">
+    <a href="b-tmn.html"><img src="photos/bookcover/EJ.png"></a>
+    <a href="#!"><img src="photos/bookcover/Ironfists.png"></a>
+    <a href="#!"><img src="photos/bookcover/chronicles.png"></a>
+  </div>
+</div>
+
+<div class="genres">
+  <h1>Explore Our genres</h1>
+	<div class="genre-row">
+		<div class="col-md-3 text-center">
+       <a href="books.html"><img src="photos/genres/Physological.png"></a>
+			<h3>Physological Thrillers</h3>
+		</div>
+
+		<div class="col-md-3 text-center">
+		  <a href="books.html"><img src="photos/genres/Thrillers.png"></a> 
+			<h3>Suspense & Thrillers</h3>
+		</div>
+
+		<div class="col-md-3 text-center">
+      <a href="books.html"><img src="photos/genres/Murder.png"></a>
+			<h3>Murder & Mysteries</h3>
+		</div>
+
+		<div class="col-md-3 text-center">
+      <a href="books.html"><img src="photos/genres/detective.png"></a> 
+			<h3>Crime & Detective</h3>
+		</div>
+	</div>
+</div> 
+
+
+
+<div class="monthbook">
+  <div class="featuredbook">
+    <a href="b-ny.html"><img src="photos/bookcover/Notyourmarrysue.jpg"></a></div>
+    <div class="featuredtext">
+    <h1>Book of the month</h1>
+    <h2>NOT YOUR MARY SUE</h2>
+    <p>"The book flows so well!" - REVIEWER <br> <br> "I could not put it down!" - REVIEWER <br> <br> An easly flowing story with a great narrative! - REVIEWER</p>
+  </div>
+    <a href="b-ny.html" div button class="monthbook-button">Read More</button></a>
+  
+  </div>
+  </div>
+  
+
+
+
+
+  <div class="sub-founder">
+  <div class="div-left-submit">
+    <img src="photos/ae_logo.png">
+    <h1>We Are Accepting Submissions!</h1>
+    <p>Aesthetic Press welcomes solicited and unsolicited submissions from both agented authors and unagented.</p>
+    <a href="submissions.html" div button class="submit">Submit</button></a>
+ 
+  </div>
+  </div>
+
+  </div>
+
+
+
+  <footer>
+    <div class="footer-container">
+          <div class="contact-row">
+              <div class="contact-row-items">
+                  <h3>Contact</h3>
+                  <ul>
+                      <li><a href="#">Contact Us</a></li>
+                      <li><a href="submissions.html">Submissions</a></li>
+                  </ul>
+              </div>
+              <div class="contact-row-items">
+                  <h3>About</h3>
+                  <ul>
+                      <li><a href="team.html">About Us</a></li>
+                      <li><a href="careers.html">Work for us</a></li>
+                      <li><a href="#">Press</a></li>
+                  </ul>
+              </div>
+              </div>
+              <div class="col item social"></a>
+               <a href="https://twitter.com/AestheticPress1"><i class="fa-brands fa-twitter"></i></a> 
+               <a href="https://www.instagram.com/AestheticPressBooks/"><i class="fa-brands fa-instagram"></i>
+                <a href="https://www.youtube.com/channel/UCs1fFzSMMUevGGqo_OY_P-g"><i class="fa-brands fa-youtube"></i>  
+                   
+          </div>
+          <a href="#!"><p class="copyright">Aesthetic Press © 2022</p>
+      </div>
+  </footer>
+</div>
+
+
+</body>
+
+</html>
